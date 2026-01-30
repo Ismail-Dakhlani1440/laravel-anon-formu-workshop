@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts\index');
+        return view('posts\create');
     }
 
     /**
@@ -30,8 +30,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            ''
-        ])
+            'title' => 'requied',
+            'description' => 'requied'
+        ]);
+        Post::create($validate);
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -39,7 +42,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        
     }
 
     /**

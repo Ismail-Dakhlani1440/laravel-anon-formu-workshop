@@ -24,7 +24,7 @@
 
         <!-- Create Post Button -->
         <div class="mb-8">
-            <a href="<!-- LINK_TO_CREATE_POST -->" class="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+            <a href="{{route('posts.create')}}" class="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">
                 Create New Post
             </a>
         </div>
@@ -32,12 +32,19 @@
         <!-- Posts Feed -->
         <div class="space-y-6">
             <!-- POST_CARD_START -->
+             @foreach($posts as $post)
             <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
                 <h2 class="text-xl font-semibold text-gray-900 mb-3">
                     <!-- POST_TITLE -->
+                     {{
+                        $post['title']
+                     }}
                 </h2>
                 <p class="text-gray-700 mb-4 line-clamp-3">
                     <!-- POST_BODY_SNIPPET -->
+                      {{
+                        $post['description']
+                     }}
                 </p>
                 <div class="flex items-center justify-between">
                     <span class="text-sm text-gray-500">
@@ -52,7 +59,7 @@
 
             <!-- REPEAT_POST_CARD_FOR_EACH_POST -->
         </div>
-
+        @endforeach
         <!-- Empty State (if no posts) -->
         <div class="text-center py-12 bg-white rounded-lg border border-gray-200">
             <p class="text-gray-500">No posts yet. Be the first to share!</p>
