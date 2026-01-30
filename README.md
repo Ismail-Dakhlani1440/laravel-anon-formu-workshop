@@ -4,7 +4,7 @@ Welcome to **The Whisper Gallery**. This is an anonymous forum where anyone can 
 
 ## 🚀 Getting Started
 
-1. **Clone the repo:** `git clone  https://github.com/Is-2m/laravel-anon-formu-workshop.git`
+1. **Clone the repo:** `git clone  https://github.com/Ismail-Dakhlani1440/laravel-anon-formu-workshop.git`
 2. **Install dependencies:** `composer install`
 3. **Setup Environment:** `cp .env.example .env`
 4. **Generate Key:** `php artisan key:generate`
